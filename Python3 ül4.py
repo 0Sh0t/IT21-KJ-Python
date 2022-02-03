@@ -9,25 +9,17 @@ Kevin Joarand
 
 
 
-#Juubel Valesti
-spaev = int(input("Sisesta oma synna"))
-j1 = 10,20,30,40,50,60,70,80,90,100
-if spaev =="j1":
-    print("!!Juubel!!: ")
-else:
-    print("Ei ole juubel: ")
+
 
 #Juubel
-synnipaev = int(input("Sisesta oma sünnipäev dd.mm.yyyy: "))
-a.b.c = synnipaev.split(".")
-aasta = 2022
-vanus = aasta - c
-jaak = vanus % 5
-
-print("a.b.c")
-
-if synnipäev==
-elif
+aasta = input("sisesta sünniaeg kujul dd.mm.yyyy:")
+d,m,y = aasta.split(".")
+aasta1 = 2022
+aasta2 = aasta1 - int(y)
+if aasta2%5==0:
+    print("sul on juubel")
+else:
+    print("sul pole juubel")
 
 #Matemaatika
 
