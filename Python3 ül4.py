@@ -3,12 +3,32 @@ Kevin Joarand
 03.02.2022
 Ülesanne 04
 '''
+import itertools
 
+#Tärnid
+k = 5
+for i in range (1,k+1):
+ print(k)
+ k = k - 1
+gen = itertools.product((0,1),repeat=25)
 
+#Jalgpalli meeskond
+sugu = input("Sisesta oma sugu M või N: ")
+    if sugu == "M":
+    vanus = int(input("Sisesta oma vanus: "))
+    if vanus >= 16 and vanus <= 18:
+    print ("Sobib meeskonda")
+    else:
+        print("Ei sobi meeskonda")
 
-
-
-
+#Müük
+a = int(input("Sisesta toote hind: "))
+if a <=10:
+    allahindlus = 0.1
+else:
+    allahindlus = 0.2
+hind = a - a*allahindlus
+print("hind on:", hind)
 
 
 #Juubel
