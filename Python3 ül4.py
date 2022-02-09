@@ -3,14 +3,99 @@ Kevin Joarand
 03.02.2022
 Ülesanne 04
 '''
+
+#Ruutude ja kuupide tabel
+
+
+
+
+
+
+
+
+
+
+#Pank
+konto = 0
+raha = int(input("Pane raha panka: "))
+intress = 0.05
+aastad = 5
+konto += raha
+print(f"{'Aasta':10} {'Algsumma':10} {'Intress':10} {'Aasta lõpuks':10}")
+
+
+for r in range(aastad):
+     kasum = konto*intress
+     print(f"{r:5} {konto:10.2f} {kasum:10.2f} {konto+kasum:10.2f}")
+     konto+=kasum
+     
+#Arvamine
+'''
+import random
+
+loop = 1
+korrad = 1
+suv = random.randint(1,10)
+
+while loop==1:
+    if korrad <= 3:
+        arv = int(input("Arva ära arv 1-10: "))
+    else:
+        veel = int(input("Tahad veel mängida? jah/ei: "))
+            if veel=="jah":
+        korrad = 0
+    else:
+        loop = 0
+    
+    korrad += 1
+
+    if arv == suv:
+        print("Arvasid ära")
+        loop = 0
+    else:
+        print("Ei arvanud ära")
+print(suv , arv)
+
+
+#Kolmnurk
+for i in range (1,11):
+    print("*"* i)
+
+k=5
+for i in range (1,6):
+    print("*"* k)
+    k -= 1
+
+
+#
+for i in range (1,11):
+    print("*"* i)
+
+for a in range(1.10):
+    if a%2==0:
+        print(f"{a} paaris")
+    else:
+        print(f"{a} paaritu")
+
+for b in range (1.10)
+    print
+
+
 import itertools
 
 #Tärnid
+import random
+
+arv = random.randint(1.10)
+
+print(random.randrange(1.10)
+
+
+gen = itertools.product((0,1),repeat=25))
 k = 5
 for i in range (1,k+1):
  print(k)
  k = k - 1
-gen = itertools.product((0,1),repeat=25)
 
 #Jalgpalli meeskond
 sugu = input("Sisesta oma sugu M või N: ")
@@ -20,7 +105,7 @@ sugu = input("Sisesta oma sugu M või N: ")
     print ("Sobib meeskonda")
     else:
         print("Ei sobi meeskonda")
-
+'''
 #Müük
 a = int(input("Sisesta toote hind: "))
 if a <=10:
