@@ -29,7 +29,7 @@ for r in range(aastad):
      print(f"{r:5} {konto:10.2f} {kasum:10.2f} {konto+kasum:10.2f}")
      konto+=kasum
      
-#Arvamine
+#Arvamismäng
 '''
 import random
 
@@ -55,7 +55,25 @@ while loop==1:
     else:
         print("Ei arvanud ära")
 print(suv , arv)
+'''
 
+#Pisike korrutustabel
+for k in range(1,11):
+    arv = 5
+    v = k * arv
+    print(f"{arv} x {k} = {v}")
+
+#Paaris ja paaritu
+
+for c in range(1, 100):
+    if c==5:
+        break
+    print(c, end='')
+
+#Loto
+
+import random
+print(random.randrange(0,99999))
 
 #Kolmnurk
 for i in range (1,11):
@@ -67,7 +85,7 @@ for i in range (1,6):
     k -= 1
 
 
-#
+'''
 for i in range (1,11):
     print("*"* i)
 
@@ -80,27 +98,40 @@ for a in range(1.10):
 for b in range (1.10)
     print
 
-
+'''
 import itertools
 
+
 #Tärnid
-import random
-
-arv = random.randint(1.10)
-
-print(random.randrange(1.10)
-
-
-gen = itertools.product((0,1),repeat=25))
 k = 5
-for i in range (1,k+1):
- print(k)
- k = k - 1
+for i in range(1,6):
+        print("*    "* k)
+        k += 1
+for a in range(1,6):          
+    for b in range(1,6):       
+        print("*    ", end='')
+    print()
+k = 5
+for i in range(1,6):
+        print("*    "* k)
+        k -= 1
+
 
 #Jalgpalli meeskond
-sugu = input("Sisesta oma sugu M või N: ")
+
+
+sugu = input("Sisestage oma sugu M/N: ")
+if sugu == "M":
+    vanus = int(input("Sisestage oma vanus: "))
+    if vanus >= 16 and vanus <= 18:
+        print("Sobib meeskonda")
+else :
+    print("Ei sobi meeskonda")
+'''
+sugu = input("Sisesta oma sugu M/N: ")
     if sugu == "M":
-    vanus = int(input("Sisesta oma vanus: "))
+        vanus = int(input("Sisesta oma vanus: "))
+    
     if vanus >= 16 and vanus <= 18:
     print ("Sobib meeskonda")
     else:
