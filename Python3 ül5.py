@@ -6,7 +6,12 @@ Kevin Joarand
 
 #Tärnid
 
-
+import random
+arvud = []
+for i in range(6):
+    arvud.append(random.randint(1,20))
+for n in range(len(arvud)):
+    print("*"*arvud[n])
 
 #Vanused
 
