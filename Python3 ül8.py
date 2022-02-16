@@ -40,6 +40,4 @@ uusAuto.lisaaasta(9999)
 uusAuto.lisahind(696969)
 uusAuto.lisakiirus(500)
 uusAuto.lisavarv('must')
-uusAuto.kuva()
-
-    
+uusAuto.kuva() 
