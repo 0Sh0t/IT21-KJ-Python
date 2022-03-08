@@ -15,5 +15,5 @@ else:
 aasta = 2020
 liblikas = "teelehe-mosaiikliblikas"
 lausekeskosa = print(aasta"liblikas on: "liblikas)
-lause = print(aasta,lause keskosa,liblikas)
+lause = print(f"{aasta}{lausekeskosa}{liblikas}")
 print(lause)
