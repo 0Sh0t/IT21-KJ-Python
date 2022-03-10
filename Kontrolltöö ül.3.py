@@ -1,33 +1,37 @@
+#Kevin Joarand
+#Kontrolltöö ül.3
+#03.11.2022
+
 import random
 
 a = 0
 b = 0
 
 
-funktsioon=['+','-']
+valik=['+','-']
 
 print('Liitmise ja lahutamise õppimine')
 
 while a <10:
-    esimenearv=random.randint(0, 10)
-    teinearv=random.randint(0, 10)
-    tehe=random.choice(funktsioon)
+    arv1=random.randint(0, 10)
+    arv2=random.randint(0, 10)
+    tehe=random.choice(valik)
 
-    kysimus=print(esimenearv, tehe, teinearv, '=')
+    k=print(arv1, tehe, arv2, '=')
 
     choice = input(">")
 
 
     if tehe== '+':
-                    arv=esimenearv+teinearv
-                    if int (choice) == esimenearv+teinearv:
+                    arv=arv1+arv2
+                    if int (choice) == arv1+arv2:
                         print ('Õige')
                         b= b+1
                     else:
                         print ('Väär')
     elif tehe== '-':
                     arv=a-b
-                    if int (choice) == esimenearv-teinearv:
+                    if int (choice) == arv1-arv2:
                         print ('Õige')
                         b= b+1
                     else:
@@ -39,7 +43,3 @@ print ("Tehted said otsa")
 
 arv = 10
 print("Sa said %d õiget %d-st" % (b, arv))
-percentage = round((g * 100), 2)
-    if arv == 0:
-    percentage = 0
-  print(f'Your score is {percentage}%.', sep = '')
