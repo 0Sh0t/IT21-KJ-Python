@@ -1,45 +1,31 @@
-#Kevin Joarand
-#Kontrolltöö ül.3
-#03.11.2022
-
 import random
 
-a = 0
-b = 0
+total = 10
+correct = 0
+nums = range(1,11)
+for _ in range(total):
+    ops = random.choice("+-*/")
+    a,b = random.choices(nums,k=2)
 
+    # you only allow integer input - your division therefore is
+    # limited to results that are integers - make sure that this
+    # is the case here by rerolling a,b until they match
+    while ops == "/" and (a%b != 0 or a<=b):
+        a,b = random.choices(nums,k=2)
 
-valik=['+','-']
+    # make sure not to go below 0 for -
+    while ops == "-" and a<b:
+        a,b = random.choices(nums,k=2)
 
-print('Liitmise ja lahutamise õppimine')
+    # as a formatted text 
+    result = askNum("What is {a}+{ops}-{b} = ".format(a,ops,b))
 
-while a <10:
-    arv1=random.randint(0, 10)
-    arv2=random.randint(0, 10)
-    tehe=random.choice(valik)
+    # calculate correct result
+    corr = calc(a,ops,b)
+    if  result == corr:
+        correct += 1
+        print("Correct")
+    else:
+        print("Wrong. Correct solution is: {} {} {} = {}".format(a,ops,b,corr))
 
-    k=print(arv1, tehe, arv2, '=')
-
-    choice = input(">")
-
-
-    if tehe== '+':
-                    arv=arv1+arv2
-                    if int (choice) == arv1+arv2:
-                        print ('Õige')
-                        b= b+1
-                    else:
-                        print ('Väär')
-    elif tehe== '-':
-                    arv=a-b
-                    if int (choice) == arv1-arv2:
-                        print ('Õige')
-                        b= b+1
-                    else:
-                        print ('Väär')
-
-    a += 1
-
-print ("Tehted said otsa")
-
-arv = 10
-print("Sa said %d õiget %d-st" % (b, arv))
+print("You have {} out of {} correct.".format(correct,total))
