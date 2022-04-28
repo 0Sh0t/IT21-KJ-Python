@@ -5,7 +5,7 @@
 extends Node
 
 func _ready():
-	var player = {"name":"Vello", "posx":69, "posy":420, "health":100, "items":["Mõõk",""], "kuld":0}
+	var player = {"name":"Vello", "posx":69, "posy":420, "health":100, "items":["Mõõk","Obene"], "kuld":0}
 	
 	print(player.kuld)
 	for i in range(5):
