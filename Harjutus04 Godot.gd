@@ -4,10 +4,14 @@
 
 extends Node
 
-func _ready():
-#Massiivi loomine
-	var mangijad = []
-	var nimed = ["Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin","Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins","Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey","Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes"]
-#Esimene nimi massiivist
-	for nimi in nimed:
-		print (nimi[0])
+var nimed = []
+var mangijad = ["Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin","Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins","Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey","Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes"]
+
+func _ready(): 
+	print("Mängijate arv: ", len(mangijad))
+	print("Esimene nimi: ", mangijad[0])
+	print(nimed)
+	mangijad.erase("Reyes")
+	mangijad.append("Kevin")
+	print(mangijad.max())
+	print(mangijad)
