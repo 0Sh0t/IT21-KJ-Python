@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://VT323-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://istockphoto-1311360186-170667a.jpg" type="Texture" id=2]
+[ext_resource path="res://Harjutus08 Godot.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 80
+font_data = ExtResource( 1 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1028.0
+margin_bottom = 607.0
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Kivi" type="Button" parent="."]
+margin_left = 14.1005
+margin_top = 518.899
+margin_right = 122.1
+margin_bottom = 584.899
+custom_fonts/font = SubResource( 1 )
+text = "Kivi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paber" type="Button" parent="."]
+margin_left = 128.875
+margin_top = 517.314
+margin_right = 260.875
+margin_bottom = 583.314
+custom_fonts/font = SubResource( 2 )
+text = "Paber"
+
+[node name="Käärid" type="Button" parent="."]
+margin_left = 267.286
+margin_top = 517.602
+margin_right = 423.286
+margin_bottom = 583.602
+custom_fonts/font = SubResource( 3 )
+text = "Käärid"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Uus Mäng" type="Button" parent="."]
+margin_left = 431.284
+margin_top = 114.887
+margin_right = 635.284
+margin_bottom = 180.887
+custom_fonts/font = SubResource( 4 )
+text = "Uus mäng"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Punktid" type="RichTextLabel" parent="."]
+margin_left = 9.89948
+margin_top = 1.41422
+margin_right = 227.899
+margin_bottom = 55.4142
+custom_fonts/normal_font = SubResource( 5 )
+text = "Punktid:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Punktid2" type="RichTextLabel" parent="."]
+margin_left = 804.9
+margin_top = 2.54414
+margin_right = 1025.9
+margin_bottom = 59.5441
+custom_fonts/normal_font = SubResource( 6 )
+text = "Punktid:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kivi-Paber-Käärid" type="RichTextLabel" parent="."]
+margin_left = 376.071
+margin_top = 43.4853
+margin_right = 723.071
+margin_bottom = 96.4853
+custom_fonts/normal_font = SubResource( 7 )
+text = "Kivi-Paber-Käärid"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Valik" type="RichTextLabel" parent="."]
+margin_left = 23.0172
+margin_top = 271.539
+margin_right = 334.017
+margin_bottom = 388.539
+custom_fonts/normal_font = SubResource( 8 )
+text = "Valik: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Valik2" type="RichTextLabel" parent="."]
+margin_left = 599.177
+margin_top = 282.674
+margin_right = 922.177
+margin_bottom = 396.674
+custom_fonts/normal_font = SubResource( 9 )
+text = "Valik: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
