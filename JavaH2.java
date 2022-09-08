@@ -1,21 +1,32 @@
-//Harjutus 2
+//1.
 
 public class JavaH2 {
-    
-    public static void main(String[] args){
-        double meter;
-        int inch = 1;
-    
-        meter = inch/39.37;
-    
-        for(int i = 0;i <= 12 ; i++){
-            for(inch =0;inch<=144;inch++){
-            meter = inch/39.37;
-            System.out.println(inch + "  inch =  " + meter + "  meters");
-            }
-            if(i==12)
-                System.out.println();
-                //i = 0;
-        }
+
+    public static void main(String[] args) {
+    teisendamine();
+    ellips();
+    aeg();
     }
+
+    public static void teisendamine(){
+        double meeter;
+        int toll = 1;
+        meeter = toll/39.37;
+        System.out.println(toll + " tolli = " + meeter + " meetrit");
+
+    }
+
+    //2.
+    public static void ellips(){
+
+    }
+
+    public static void aeg(){
+        double tund;
+        int minut = 60;
+        tund = minut/60;
+        System.out.println(minut + " minutit = " + tund + " tundi");
+    }
+    
+
 }
