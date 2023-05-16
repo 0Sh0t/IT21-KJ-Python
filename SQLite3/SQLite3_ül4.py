@@ -1,9 +1,9 @@
 import sqlite3
-from tkinter import Tk, Listbox, Scrollbar, Frame, Button, Entry, messagebox, Label, END
+from tkinter import Tk, Listbox, Scrollbar, Frame, Button, Entry, messagebox, Label, END, IntVar, Radiobutton
 from ttkbootstrap import Style
 
 # Andmebaasi teekond ja tabel
-database_path = "C:/sqlite/epood_kjoarand.db"
+database_path = "C:/Users/kevin/OneDrive/Documents/sqlite-tools-win32-x86-3410200/epood_kjoarand.db"
 table_name = "kjoarand"
 
 # Loome andmebaasi ühenduse
@@ -25,9 +25,8 @@ def calculate_page_count(page_size):
     return (total_records // page_size) + 1
 
 # Funktsioon, mis kuvab lehekülje andmed
-def display_page(page_num):
+def display_page(page_num, page_size):
     listbox.delete(0, END)
-    page_size = 5  # Muuda vastavalt soovile
     data = get_page_data(page_num, page_size)
     for row in data:
         for i, value in enumerate(row):
@@ -39,14 +38,14 @@ def next_page():
     global current_page
     if current_page < page_count:
         current_page += 1
-        display_page(current_page)
+        display_page(current_page, current_page_size.get())
 
 # Funktsioon, mis kerib tagasi
 def previous_page():
     global current_page
     if current_page > 1:
         current_page -= 1
-        display_page(current_page)
+        display_page(current_page, current_page_size.get())
 
 # Funktsioon, mis otsib andmeid
 def search_data():
@@ -69,7 +68,7 @@ def add_data():
     if any(value == "" for value in values):
         messagebox.showwarning("Andmete lisamine", "Palun täitke kõik väljad.")
         return
-        query = f"INSERT INTO {table_name} ('First Name', 'Last Name', Email, 'Car Make', 'Car Model', 'Car Year', 'Car Price') VALUES (?, ?, ?, ?, ?, ?, ?)"
+    query = f"INSERT INTO {table_name} ('First Name', 'Last Name', Email, 'Car Make', 'Car Model', 'Car Year', 'Car Price') VALUES (?, ?, ?, ?, ?, ?, ?)"
     cursor.execute(query, values)
     conn.commit()
     messagebox.showinfo("Andmete lisamine", "Andmed on edukalt lisatud.")
@@ -77,7 +76,7 @@ def add_data():
     for entry in add_entries:
         entry.delete(0, END)
     # Refresh the current page to display the updated data
-    display_page(current_page)
+    display_page(current_page, current_page_size.get())
 
 # Funktsioon, mis kustutab valitud rea
 def delete_row():
@@ -88,19 +87,18 @@ def delete_row():
     result = messagebox.askyesno("Rea kustutamine", "Kas olete kindel, et soovite valitud rea kustutada?")
     if result == "yes":
         for index in reversed(selected_indices):
-            data = get_page_data(current_page, 5)  # Assuming page size is 5
+            data = get_page_data(current_page, current_page_size.get())
             row_index = index % len(data)
-            record_id = data[row_index][0]  # Assuming ID is in the first column
+            record_id = data[row_index][0]
             query = f"DELETE FROM {table_name} WHERE ID = ?"
             cursor.execute(query, (record_id,))
             conn.commit()
-        display_page(current_page)
+        display_page(current_page, current_page_size.get())
         messagebox.showinfo("Rea kustutamine", "Valitud read on edukalt kustutatud.")
 
 # Loome tkinteri akna
 root = Tk()
 root.title("Andmete kuvamine")
-root.geometry("500x400")
 
 # Lae ttkbootstrap stiil
 style = Style(theme="darkly")
@@ -162,14 +160,36 @@ add_button.pack()
 delete_button = Button(root, text="Kustuta rida", command=delete_row)
 delete_button.pack()
 
+# Lehekülje suuruse valimise nupp
+page_size_label = Label(root, text="Lehekülje suurus:")
+page_size_label.pack()
+
+current_page_size = IntVar(value=5)
+
+def update_page_size():
+    global current_page
+    current_page = 1
+    display_page(current_page, current_page_size.get())
+
+page_size_5_button = Radiobutton(root, text="5", variable=current_page_size, value=5, command=update_page_size)
+page_size_5_button.pack()
+
+page_size_10_button = Radiobutton(root, text="10", variable=current_page_size, value=10, command=update_page_size)
+page_size_10_button.pack()
+
+page_size_25_button = Radiobutton(root, text="25", variable=current_page_size, value=25, command=update_page_size)
+page_size_25_button.pack()
+
+page_size_50_button = Radiobutton(root, text="50", variable=current_page_size, value=50, command=update_page_size)
+page_size_50_button.pack()
+
 # Kuvame esimese lehekülje andmed
 current_page = 1
 columns = ["ID", "First Name", "Last Name", "Email", "Car Make", "Car Model", "Car Year", "Car Price"]
+page_count = calculate_page_count(current_page_size.get())
+display_page(current_page, current_page_size.get())
 
-page_count = calculate_page_count(5)  # Muuda vastavalt soovile
-display_page(current_page)
-
-# Käivitame ttkbootstrap stiiliga tkinter
+# Käivitame tkinteri akna sündmuse tsükli
 root.mainloop()
 
 # Sulgeme andmebaasi ühenduse
