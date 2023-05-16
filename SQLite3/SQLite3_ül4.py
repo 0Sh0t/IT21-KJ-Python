@@ -3,7 +3,7 @@ from tkinter import Tk, Listbox, Scrollbar, Frame, Button, Entry, messagebox, La
 from ttkbootstrap import Style
 
 # Andmebaasi teekond ja tabel
-database_path = "C:/Users/kevin/OneDrive/Documents/sqlite-tools-win32-x86-3410200/epood_kjoarand.db"
+database_path = "C:/sqlite/epood_kjoarand.db"
 table_name = "kjoarand"
 
 # Loome andmebaasi ühenduse
